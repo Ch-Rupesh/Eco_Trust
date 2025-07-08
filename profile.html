@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - ECO TRUST</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f0f7f7, #f9fbe7);
+      animation: fadeSlideIn 1s ease;
+      padding-bottom: 70px; /* space for footer */
+    }
+
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      background-color: #00bfa5;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 22px;
+    }
+
+    .logout-btn {
+      background-color: white;
+      color: #00bfa5;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .logout-btn:hover {
+      color: red;
+      transform: scale(1.05);
+    }
+
+    .floating-icons i {
+      position: absolute;
+      font-size: 28px;
+      color: rgba(0, 191, 165, 0.3);
+      animation: floatIcon 25s linear infinite;
+    }
+
+    @keyframes floatIcon {
+      0% { transform: translateY(100vh) rotate(0); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+    }
+
+    .profile-box {
+      width: 90%;
+      max-width: 500px;
+      background: #fff;
+      margin: 60px auto;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .profile-box h2 {
+      margin-bottom: 20px;
+    }
+
+    .profile-info p {
+      font-size: 16px;
+      margin: 8px 0;
+      line-height: 1.6;
+    }
+
+    footer {
+      background-color: #ffffff;
+      border-top: 1px solid #ccc;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    .footer-btn {
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      text-decoration: none;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .footer-btn i {
+      font-size: 24px;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .footer-btn:hover {
+      color: #00bfa5;
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="floating-icons">
+    <i class="fas fa-wind" style="left: 15%; animation-delay: 2s;"></i>
+    <i class="fas fa-water" style="left: 45%; animation-delay: 4s;"></i>
+    <i class="fas fa-sun" style="left: 75%; animation-delay: 6s;"></i>
+  </div>
+
+  <header>
+    <span><strong>🌿 ECO TRUST</strong></span>
+    <button class="logout-btn">Logout</button>
+  </header>
+
+  <div class="profile-box">
+    <h2>Your Profile</h2>
+    <div class="profile-info">
+      <p><strong>Full Name:</strong> Rohith Doppalapudi</p>
+      <p><strong>Email:</strong> rohith@example.com</p>
+      <p><strong>Phone:</strong> +91-9876543210</p>
+      <p><strong>Address:</strong> 123 Green Street, Eco City, India</p>
+    </div>
+  </div>
+
+  <footer>
+    <a href="home.html" class="footer-btn"><i class="fas fa-home"></i>Home</a>
+    <a href="cart.html" class="footer-btn"><i class="fas fa-shopping-cart"></i>Cart</a>
+    <a href="order.html" class="footer-btn"><i class="fas fa-box"></i>Orders</a>
+    <a href="profile.html" class="footer-btn"><i class="fas fa-user"></i>Profile</a>
+  </footer>
+
+  <script>
+    document.querySelector('.logout-btn').addEventListener('click', () => {
+      const confirmLogout = confirm("Are you sure you want to logout?");
+      if (confirmLogout) {
+        sessionStorage.clear();
+        window.location.href = "login.html";
+      }
+    });
+  </script>
+</body>
+</html>
