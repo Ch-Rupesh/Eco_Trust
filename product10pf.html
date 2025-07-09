@@ -185,7 +185,7 @@
   <div class="container">
     <div class="product-section">
       <div class="product-image">
-        <img src="paper folder.jpg" alt="Steel Lunchbox">
+        <img src="paper folder.jpg" alt="Paper Folder">
       </div>
       <div class="product-details">
         <h2>Paper Folder (Eco-Friendly)</h2>
@@ -193,9 +193,7 @@
         <div class="offer">47% OFF + Free delivery</div>
         
         <label for="quantity" style="display: block; margin-top: 10px; font-weight: bold;">Quantity:</label>
-<input type="number" id="quantity" min="1" value="1" style="width: 80px; padding: 5px; border-radius: 4px; border: 1px solid #ccc; margin-bottom: 10px;">
-
-
+        <input type="number" id="quantity" min="1" value="1" style="width: 80px; padding: 5px; border-radius: 4px; border: 1px solid #ccc; margin-bottom: 10px;">
 
         <div class="actions">
           <button class="add-cart" onclick="addToCart()">Add to Cart</button>
@@ -213,50 +211,46 @@
       </div>
     </div>
 
-
     <h3>Paper Folders – Advantages vs Disadvantages</h3>
-<table style="width: 100%; border-collapse: separate; border-spacing: 0; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 10px; overflow: hidden;">
-  <thead style="background-color: #00bfa5; color: white;">
-    <tr>
-      <th style="padding: 12px; text-align: left; border-right: 1px solid #ccc; border-top-left-radius: 10px;">Advantages</th>
-      <th style="padding: 12px; text-align: left; border-top-right-radius: 10px;">Disadvantages (Plastic)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding: 10px; border-right: 1px solid #ccc; background-color: #f9f9f9;">Recyclable and biodegradable</td>
-      <td style="padding: 10px; background-color: #f9f9f9;">Difficult to recycle</td>
-    </tr>
-    <tr>
-      <td style="padding: 10px; border-right: 1px solid #ccc; background-color: #ffffff;">Customizable and lightweight</td>
-      <td style="padding: 10px; background-color: #ffffff;">Cracks or fades over time</td>
-    </tr>
-    <tr>
-      <td style="padding: 10px; border-right: 1px solid #ccc; background-color: #f9f9f9;">Made from renewable sources</td>
-      <td style="padding: 10px; background-color: #f9f9f9;">Adds to plastic pollution</td>
-    </tr>
-    <tr>
-      <td style="padding: 10px; border-right: 1px solid #ccc; border-bottom-left-radius: 10px; background-color: #ffffff;">Sustainable and safe</td>
-      <td style="padding: 10px; border-bottom-right-radius: 10px; background-color: #ffffff;">Non-biodegradable</td>
-    </tr>
-  </tbody>
-</table>
-
-
+    <table style="width: 100%; border-collapse: separate; border-spacing: 0; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 10px; overflow: hidden;">
+      <thead style="background-color: #00bfa5; color: white;">
+        <tr>
+          <th style="padding: 12px; text-align: left; border-right: 1px solid #ccc; border-top-left-radius: 10px;">Advantages</th>
+          <th style="padding: 12px; text-align: left; border-top-right-radius: 10px;">Disadvantages (Plastic)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 10px; border-right: 1px solid #ccc; background-color: #f9f9f9;">Recyclable and biodegradable</td>
+          <td style="padding: 10px; background-color: #f9f9f9;">Difficult to recycle</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border-right: 1px solid #ccc; background-color: #ffffff;">Customizable and lightweight</td>
+          <td style="padding: 10px; background-color: #ffffff;">Cracks or fades over time</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border-right: 1px solid #ccc; background-color: #f9f9f9;">Made from renewable sources</td>
+          <td style="padding: 10px; background-color: #f9f9f9;">Adds to plastic pollution</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border-right: 1px solid #ccc; border-bottom-left-radius: 10px; background-color: #ffffff;">Sustainable and safe</td>
+          <td style="padding: 10px; border-bottom-right-radius: 10px; background-color: #ffffff;">Non-biodegradable</td>
+        </tr>
+      </tbody>
+    </table>
 
     <div class="review-section">
       <h3>Customer Reviews</h3>
-<div class="review">
-  <div class="stars">⭐⭐⭐⭐</div>
-  <strong>Ishita Malhotra</strong><br>
-  Very useful for school. Light and easy to carry around.
-</div>
-<div class="review">
-  <div class="stars">⭐⭐⭐⭐⭐</div>
-  <strong>Rohan Jain</strong><br>
-  Recyclable and neat. Switched all my plastic folders to these.
-</div>
-
+      <div class="review">
+        <div class="stars">⭐⭐⭐⭐</div>
+        <strong>Ishita Malhotra</strong><br>
+        Very useful for school. Light and easy to carry around.
+      </div>
+      <div class="review">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <strong>Rohan Jain</strong><br>
+        Recyclable and neat. Switched all my plastic folders to these.
+      </div>
 
       <div class="review-form">
         <h3>Write a Review</h3>
@@ -293,23 +287,32 @@
       }
     }
 
-    // function addToCart() {
-    //   alert("Product added to cart!");
-    // }
-
-    // function buyNow() {
-    //   alert("Proceeding to payment!");
-    // }
     function addToCart() {
-  const qty = document.getElementById('quantity').value;
-  alert(`${qty} item(s) added to cart!`);
-}
+      const qty = parseInt(document.getElementById('quantity').value);
+      const product = {
+        id: 'paper-folder',
+        name: 'Paper Folder',
+        price: 79,
+        image: 'paper folder.jpg',
+        quantity: qty
+      };
 
-function buyNow() {
-  const qty = document.getElementById('quantity').value;
-  alert(`Proceeding to payment for ${qty} item(s)!`);
-}
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const index = cart.findIndex(item => item.id === product.id);
+      if (index !== -1) {
+        cart[index].quantity += qty;
+      } else {
+        cart.push(product);
+      }
 
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`${qty} Paper Folder(s) added to cart!`);
+    }
+
+    function buyNow() {
+      const qty = document.getElementById('quantity').value;
+      alert(`Proceeding to payment for ${qty} item(s)!`);
+    }
 
     let selectedRating = 0;
 
@@ -323,13 +326,8 @@ function buyNow() {
     function highlightStars(rating) {
       document.querySelectorAll('.star-input i').forEach(star => {
         const val = parseInt(star.getAttribute('data-value'));
-        if (val <= rating) {
-          star.classList.remove('fa-regular');
-          star.classList.add('fa-solid');
-        } else {
-          star.classList.add('fa-regular');
-          star.classList.remove('fa-solid');
-        }
+        star.classList.toggle('fa-solid', val <= rating);
+        star.classList.toggle('fa-regular', val > rating);
       });
     }
 
@@ -350,15 +348,12 @@ function buyNow() {
       `;
 
       document.querySelector('.review-section').insertAdjacentHTML('beforeend', reviewHTML);
-
-      // Reset form
       document.getElementById('comment').value = '';
       selectedRating = 0;
       highlightStars(0);
       alert('Thank you for your review!');
     }
   </script>
-  <br>
-  <br>
+  <br><br>
 </body>
 </html>
