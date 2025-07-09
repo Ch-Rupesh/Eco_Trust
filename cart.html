@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Cart - ECO TRUST</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f1f3f6;
+      margin: 0;
+      padding-bottom: 80px;
+    }
+
+    header {
+      background: #00bfa5;
+      color: white;
+      padding: 15px 20px;
+      font-size: 22px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00bfa5;
+      margin: 20px 0 0;
+    }
+
+    .cart-container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .cart-item {
+      display: flex;
+      gap: 20px;
+      padding: 15px 0;
+      border-bottom: 1px solid #ccc;
+      align-items: center;
+    }
+
+    .cart-item img {
+      width: 100px;
+      border-radius: 6px;
+    }
+
+    .cart-details {
+      flex: 1;
+    }
+
+    .cart-details h2 {
+      font-size: 20px;
+      margin: 0 0 5px;
+    }
+
+    .cart-details p {
+      margin: 5px 0;
+    }
+
+    .total {
+      text-align: right;
+      font-size: 18px;
+      font-weight: bold;
+      padding-top: 10px;
+    }
+
+    .empty-msg {
+      text-align: center;
+      color: gray;
+      font-size: 18px;
+      margin-top: 40px;
+    }
+
+    .clear-cart {
+      display: block;
+      margin: 20px auto 0;
+      padding: 10px 20px;
+      background-color: #d32f2f;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .clear-cart:hover {
+      background-color: #b71c1c;
+    }
+
+    footer {
+      background: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-around;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      border-top: 1px solid #ccc;
+    }
+
+    .footer-btn {
+      text-align: center;
+      color: #333;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-btn i {
+      font-size: 20px;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .footer-btn:hover {
+      color: #00bfa5;
+    }
+
+    .logout-btn {
+      background-color: white;
+      color: #00bfa5;
+      border: none;
+      padding: 6px 14px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .logout-btn:hover {
+      background-color: #e0f2f1;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    ECO TRUST
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </header>
+
+  <h1>My Cart</h1>
+  <div class="cart-container" id="cart-container">
+    <!-- Items will be dynamically inserted -->
+  </div>
+
+  <footer>
+    <a href="home.html" class="footer-btn"><i class="fas fa-home"></i>Home</a>
+    <a href="cart.html" class="footer-btn"><i class="fas fa-shopping-cart"></i>Cart</a>
+    <a href="order.html" class="footer-btn"><i class="fas fa-box"></i>Orders</a>
+    <a href="profile.html" class="footer-btn"><i class="fas fa-user"></i>Profile</a>
+  </footer>
+
+  <script>
+    const cartContainer = document.getElementById('cart-container');
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (cart.length === 0) {
+      cartContainer.innerHTML = `<p class="empty-msg">Your cart is empty.</p>`;
+    } else {
+      let total = 0;
+
+      cart.forEach(item => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+
+        const itemHTML = `
+          <div class="cart-item">
+            <img src="${item.image}" alt="${item.name}">
+            <div class="cart-details">
+              <h2>${item.name}</h2>
+              <p>Price: ₹${item.price}</p>
+              <p>Quantity: ${item.quantity}</p>
+              <p>Subtotal: ₹${subtotal}</p>
+            </div>
+          </div>
+        `;
+        cartContainer.insertAdjacentHTML('beforeend', itemHTML);
+      });
+
+      cartContainer.insertAdjacentHTML('beforeend', `<div class="total">Total: ₹${total}</div>`);
+      cartContainer.insertAdjacentHTML('beforeend', `<button class="clear-cart" onclick="clearCart()">Clear Cart</button>`);
+    }
+
+    function clearCart() {
+      localStorage.removeItem('cart');
+      location.reload();
+    }
+
+    function logout() {
+      const confirmLogout = confirm("Are you sure you want to logout?");
+      if (confirmLogout) {
+        sessionStorage.clear();
+        window.location.href = "login.html";
+      }
+    }
+  </script>
+
+</body>
+</html>
