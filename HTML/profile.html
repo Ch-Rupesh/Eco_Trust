@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile - ECO TRUST</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <i class="fas fa-leaf"></i>
+      <span><strong>ECO TRUST</strong></span>
+    </div>
+    <button class="logout-btn">Logout</button>
+  </header>
+
+  <!-- Floating Background Icons -->
+  <div class="floating-bg">
+    <i class="fas fa-leaf" style="left: 10%; animation-delay: 0s;"></i>
+    <i class="fas fa-water" style="left: 40%; animation-delay: 4s;"></i>
+    <i class="fas fa-wind" style="left: 70%; animation-delay: 2s;"></i>
+    <i class="fas fa-recycle" style="left: 85%; animation-delay: 6s;"></i>
+  </div>
+
+  <div class="main-container">
+    <!-- Profile Image -->
+    <div class="profile-image">
+      <img src="profile.jpg" alt="Profile Image">
+    </div>
+
+    <!-- Profile Info -->
+    <div class="profile-info-container">
+      <div class="profile-box">
+        <h2>Personal Information</h2>
+        <div class="profile-info">
+          <p><strong>Full Name:</strong> Rohith Doppalapudi</p>
+          <p><strong>Email:</strong> rohith@example.com</p>
+          <p><strong>Phone:</strong> +91-9876543210</p>
+        </div>
+      </div>
+
+      <div class="profile-box">
+        <h2>Address <button class="edit-btn" onclick="alert('Edit address clicked!')">Edit</button></h2>
+        <div class="profile-info">
+          <p><strong>Street:</strong> 123 Green Street</p>
+          <p><strong>City:</strong> Eco City</p>
+          <p><strong>State:</strong> Tamil Nadu</p>
+          <p><strong>Country:</strong> India</p>
+          <p><strong>Pincode:</strong> 600001</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <a href="home.html" class="footer-btn"><i class="fas fa-home"></i>Home</a>
+    <a href="cart.html" class="footer-btn"><i class="fas fa-shopping-cart"></i>Cart</a>
+    <a href="order.html" class="footer-btn"><i class="fas fa-box"></i>Orders</a>
+    <a href="profile.html" class="footer-btn"><i class="fas fa-user"></i>Profile</a>
+  </footer>
+
+  <script>
+    document.querySelector('.logout-btn').addEventListener('click', () => {
+      const confirmLogout = confirm("Are you sure you want to logout?");
+      if (confirmLogout) {
+        sessionStorage.clear();
+        window.location.href = "login.html";
+      }
+    });
+  </script>
+
+</body>
+</html>

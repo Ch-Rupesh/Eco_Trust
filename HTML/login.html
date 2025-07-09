@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ECO TRUST - Login</title>
+  <link href="login.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Background Effects -->
+  <div class="water-bg"></div>
+  <div class="gradient-bg"></div>
+  <div class="bubbles">
+    <span style="left: 5%; animation-duration: 18s;"></span>
+    <span style="left: 15%; animation-duration: 22s;"></span>
+    <span style="left: 25%; animation-duration: 17s;"></span>
+    <span style="left: 35%; animation-duration: 19s;"></span>
+    <span style="left: 45%; animation-duration: 20s;"></span>
+    <span style="left: 55%; animation-duration: 23s;"></span>
+    <span style="left: 65%; animation-duration: 21s;"></span>
+    <span style="left: 75%; animation-duration: 24s;"></span>
+    <span style="left: 85%; animation-duration: 18s;"></span>
+    <span style="left: 95%; animation-duration: 26s;"></span>
+  </div>
+  <div class="floating-boxes">
+    <div class="box" style="top: 10%; left: 5%; animation-delay: 0s;"></div>
+    <div class="box" style="top: 50%; left: 80%; animation-delay: 3s;"></div>
+    <div class="box" style="top: 70%; left: 20%; animation-delay: 6s;"></div>
+    <div class="box" style="top: 30%; left: 60%; animation-delay: 1.5s;"></div>
+    <div class="box" style="top: 80%; left: 40%; animation-delay: 4.5s;"></div>
+  </div>
+  <div class="glow-bg"></div>
+
+  <!-- Header -->
+  <header>
+    <h1>🌿 ECO TRUST</h1>
+  </header>
+
+  <!-- Login Card -->
+  <div class="container">
+    <div class="login-card">
+      <h2>Login to Your Account</h2>
+      <input type="text" id="username" placeholder="Username" />
+      <input type="password" id="password" placeholder="Password" />
+      <button class="login-btn" onclick="login()">Login</button>
+      <p class="signup-text">
+        Don’t have an account?
+        <a href="signup.html">Sign Up</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      const correctUsername = "rohithdoppalapudi614@gmail.com";
+      const correctPassword = "12052006";
+
+      if (username === "" || password === "") {
+        alert("Please enter both username and password.");
+      } else if (username === correctUsername && password === correctPassword) {
+        alert("Login successful! Redirecting to home page...");
+        window.location.href = "home.html";
+      } else {
+        alert("Invalid username or password. Please try again.");
+      }
+    }
+  </script>
+
+</body>
+</html>

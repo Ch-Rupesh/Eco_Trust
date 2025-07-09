@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eco Product - ECO TRUST</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f1f3f6;
+    }
+
+    header {
+      background: #00bfa5;
+      color: white;
+      padding: 15px 20px;
+      font-size: 22px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      background: white;
+      max-width: 900px;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .product-section {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (min-width: 768px) {
+      .product-section {
+        flex-direction: row;
+        gap: 30px;
+      }
+    }
+
+    .product-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .product-image img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+    }
+
+    .product-details {
+      flex: 2;
+    }
+
+    .product-details h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 26px;
+      color: #d32f2f;
+      margin-bottom: 10px;
+    }
+
+    .offer {
+      font-size: 16px;
+      color: green;
+      margin-bottom: 15px;
+    }
+
+    .actions button {
+      padding: 10px 20px;
+      margin: 8px 10px 8px 0;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .add-cart {
+      background-color: #ff9f00;
+      color: white;
+    }
+
+    .buy-now {
+      background-color: #fb641b;
+      color: white;
+    }
+
+    .add-cart:hover {
+      background-color: #f57c00;
+    }
+
+    .buy-now:hover {
+      background-color: #e65100;
+    }
+
+    .description {
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+
+    .review-section {
+      margin-top: 40px;
+      border-top: 1px solid #ccc;
+      padding-top: 20px;
+    }
+
+    .review-section h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    .review {
+      background-color: #f9f9f9;
+      padding: 12px 15px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+    }
+
+    .stars {
+      color: gold;
+      margin-bottom: 5px;
+    }
+
+    .review-form {
+      margin-top: 20px;
+    }
+
+    .star-input i {
+      font-size: 24px;
+      margin-right: 5px;
+      cursor: pointer;
+      color: gold;
+    }
+
+    footer {
+      background: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-around;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      border-top: 1px solid #ccc;
+    }
+
+    .footer-btn {
+      text-align: center;
+      color: #333;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-btn i {
+      font-size: 20px;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .footer-btn:hover {
+      color: #00bfa5;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    ECO TRUST
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </header>
+
+  <div class="container">
+    <div class="product-section">
+      <div class="product-image">
+        <img src="paper folder.jpg" alt="Paper Folder">
+      </div>
+      <div class="product-details">
+        <h2>Paper Folder (Eco-Friendly)</h2>
+        <div class="price">₹79 <span style="text-decoration: line-through; font-size: 16px; color: gray;">₹149</span></div>
+        <div class="offer">47% OFF + Free delivery</div>
+        
+        <label for="quantity" style="display: block; margin-top: 10px; font-weight: bold;">Quantity:</label>
+        <input type="number" id="quantity" min="1" value="1" style="width: 80px; padding: 5px; border-radius: 4px; border: 1px solid #ccc; margin-bottom: 10px;">
+
+        <div class="actions">
+          <button class="add-cart" onclick="addToCart()">Add to Cart</button>
+          <button class="buy-now" onclick="buyNow()">Buy Now</button>
+        </div>
+        <div class="description">
+          <p>Organize your documents with these recyclable, plastic-free folders. Ideal for school, office, or home use.</p>
+          <ul> 
+            <li>Set of 3 folders</li> 
+            <li>Made from thick kraft paper</li> 
+            <li>Eco-printed & durable</li> 
+            <li>Recyclable & biodegradable</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h3>Paper Folders – Advantages vs Disadvantages</h3>
+    <table style="width: 100%; border-collapse: separate; border-spacing: 0; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 10px; overflow: hidden;">
+      <thead style="background-color: #00bfa5; color: white;">
+        <tr>
+          <th style="padding: 12px; text-align: left; border-right: 1px solid #ccc; border-top-left-radius: 10px;">Advantages</th>
+          <th style="padding: 12px; text-align: left; border-top-right-radius: 10px;">Disadvantages (Plastic)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 10px; border-right: 1px solid #ccc; background-color: #f9f9f9;">Recyclable and biodegradable</td>
+          <td style="padding: 10px; background-color: #f9f9f9;">Difficult to recycle</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border-right: 1px solid #ccc; background-color: #ffffff;">Customizable and lightweight</td>
+          <td style="padding: 10px; background-color: #ffffff;">Cracks or fades over time</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border-right: 1px solid #ccc; background-color: #f9f9f9;">Made from renewable sources</td>
+          <td style="padding: 10px; background-color: #f9f9f9;">Adds to plastic pollution</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border-right: 1px solid #ccc; border-bottom-left-radius: 10px; background-color: #ffffff;">Sustainable and safe</td>
+          <td style="padding: 10px; border-bottom-right-radius: 10px; background-color: #ffffff;">Non-biodegradable</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="review-section">
+      <h3>Customer Reviews</h3>
+      <div class="review">
+        <div class="stars">⭐⭐⭐⭐</div>
+        <strong>Ishita Malhotra</strong><br>
+        Very useful for school. Light and easy to carry around.
+      </div>
+      <div class="review">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <strong>Rohan Jain</strong><br>
+        Recyclable and neat. Switched all my plastic folders to these.
+      </div>
+
+      <div class="review-form">
+        <h3>Write a Review</h3>
+        <label for="star-rating">Rating:</label><br>
+        <div class="star-input" id="star-input">
+          <i class="fa-regular fa-star" data-value="1"></i>
+          <i class="fa-regular fa-star" data-value="2"></i>
+          <i class="fa-regular fa-star" data-value="3"></i>
+          <i class="fa-regular fa-star" data-value="4"></i>
+          <i class="fa-regular fa-star" data-value="5"></i>
+        </div>
+
+        <label for="comment" style="margin-top: 10px; display: block;">Your Comment:</label>
+        <textarea id="comment" rows="3" style="width: 100%; padding: 8px; margin-top: 5px; border-radius: 6px; border: 1px solid #ccc;"></textarea>
+
+        <button onclick="submitReview()" style="margin-top: 10px; background: #00bfa5; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer;">Submit Review</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <a href="home.html" class="footer-btn"><i class="fas fa-home"></i>Home</a>
+    <a href="cart.html" class="footer-btn"><i class="fas fa-shopping-cart"></i>Cart</a>
+    <a href="order.html" class="footer-btn"><i class="fas fa-box"></i>Orders</a>
+    <a href="profile.html" class="footer-btn"><i class="fas fa-user"></i>Profile</a>
+  </footer>
+
+  <script>
+    function logout() {
+      const confirmLogout = confirm("Are you sure you want to logout?");
+      if (confirmLogout) {
+        sessionStorage.clear();
+        window.location.href = "login.html";
+      }
+    }
+
+    function addToCart() {
+      const qty = parseInt(document.getElementById('quantity').value);
+      const product = {
+        id: 'paper-folder',
+        name: 'Paper Folder',
+        price: 79,
+        image: 'paper folder.jpg',
+        quantity: qty
+      };
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const index = cart.findIndex(item => item.id === product.id);
+      if (index !== -1) {
+        cart[index].quantity += qty;
+      } else {
+        cart.push(product);
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`${qty} Paper Folder(s) added to cart!`);
+    }
+
+    function buyNow() {
+      const qty = document.getElementById('quantity').value;
+      alert(`Proceeding to payment for ${qty} item(s)!`);
+    }
+
+    let selectedRating = 0;
+
+    document.querySelectorAll('.star-input i').forEach(star => {
+      star.addEventListener('click', function () {
+        selectedRating = parseInt(this.getAttribute('data-value'));
+        highlightStars(selectedRating);
+      });
+    });
+
+    function highlightStars(rating) {
+      document.querySelectorAll('.star-input i').forEach(star => {
+        const val = parseInt(star.getAttribute('data-value'));
+        star.classList.toggle('fa-solid', val <= rating);
+        star.classList.toggle('fa-regular', val > rating);
+      });
+    }
+
+    function submitReview() {
+      const comment = document.getElementById('comment').value.trim();
+      if (selectedRating === 0 || comment === '') {
+        alert('Please select a star rating and enter a comment.');
+        return;
+      }
+
+      const stars = '⭐'.repeat(selectedRating);
+      const reviewHTML = `
+        <div class="review">
+          <div class="stars">${stars}</div>
+          <strong>You</strong><br>
+          ${comment}
+        </div>
+      `;
+
+      document.querySelector('.review-section').insertAdjacentHTML('beforeend', reviewHTML);
+      document.getElementById('comment').value = '';
+      selectedRating = 0;
+      highlightStars(0);
+      alert('Thank you for your review!');
+    }
+  </script>
+  <br><br>
+</body>
+</html>

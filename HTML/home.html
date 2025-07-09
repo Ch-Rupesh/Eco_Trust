@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ECO TRUST - Home</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="home.css" rel="stylesheet">
+</head>
+<body>
 
+  <div class="floating-icons">
+    <i class="fas fa-leaf" style="left: 5%; animation-delay: 0s;"></i>
+    <i class="fas fa-recycle" style="left: 15%; animation-delay: 3s;"></i>
+    <i class="fas fa-seedling" style="left: 25%; animation-delay: 6s;"></i>
+    <i class="fas fa-tree" style="left: 35%; animation-delay: 1.5s;"></i>
+    <i class="fas fa-water" style="left: 45%; animation-delay: 4s;"></i>
+    <i class="fas fa-sun" style="left: 55%; animation-delay: 2.5s;"></i>
+    <i class="fas fa-wind" style="left: 65%; animation-delay: 5.5s;"></i>
+    <i class="fas fa-mountain" style="left: 75%; animation-delay: 7s;"></i>
+    <i class="fas fa-globe" style="left: 85%; animation-delay: 3.5s;"></i>
+    <i class="fas fa-cloud" style="left: 95%; animation-delay: 1s;"></i>
+  </div>
+
+  <header>
+    <span><strong>🌿 ECO TRUST</strong></span>
+    <button class="logout-btn">Logout</button>
+  </header>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search for products, brands and more...">
+    <i class="fas fa-search"></i>
+  </div>
+
+  <main>
+    <h2>Welcome to ECO TRUST</h2>
+    <p>Explore eco-friendly products, shop sustainably!</p>
+
+    <div class="carousel">
+      <img src="Gemini_Generated_Image_2qv83f2qv83f2qv8.png" alt="Eco Image 1">
+      <img src="Gemini_Generated_Image_i0zzgti0zzgti0zz.png" alt="Eco Image 2">
+      <img src="Gemini_Generated_Image_fwjg45fwjg45fwjg.png" alt="Eco Image 3">
+      <img src="Gemini_Generated_Image_e1b6mxe1b6mxe1b6.png" alt="Eco Image 4">
+      <img src="say-no-plastic-posters-bags.jpg" alt="Eco Image 5">
+    </div>
+
+    <h3 style="margin-top: 30px;">Top Eco Products</h3>
+    <div class="product-grid">
+      <div class="product"><img src="lunchbox.jpg" alt="Steel lunchbox"><a href="product1steelbox.html">Steel lunchbox</a></div>
+      <div class="product"><img src="beeswax foodwrap.jpg" alt="Beewax wraps"><a href="product2bww.html">Beewax wraps</a></div>
+      <div class="product"><img src="steel spoon.jpg" alt="Steel cutlery"><a href="product3sc.html">Steel cutlery</a></div>
+      <div class="product"><img src="brush.jpg" alt="Bamboo toothbrush"><a href="product4btb.html">Bamboo toothbrush</a></div>
+      <div class="product"><img src="Cork phonecase.avif" alt="Cork phone case"><a href="product5cpc.html">Cork phone case</a></div>
+      <div class="product"><img src="keychain.jpg" alt="Metal key chains"><a href="product6mkc.html">Metal key chains</a></div>
+      <div class="product"><img src="jute bag.jpg" alt="Jute bags"><a href="product7jb.html">Jute bags</a></div>
+      <div class="product"><img src="steel bottle.jpg" alt="Steel water bottles"><a href="product8swb.html">Steel water bottles</a></div>
+      <div class="product"><img src="metal  pen.jpg" alt="Metal pens"><a href="product9mp.html">Metal pens</a></div>
+      <div class="product"><img src="paper folder.jpg" alt="Paper folders"><a href="product10pf.html">Paper folders</a></div>
+    </div>
+  </main>
+
+  <footer>
+    <a href="home.html" class="footer-btn"><i class="fas fa-home"></i>Home</a>
+    <a href="cart.html" class="footer-btn"><i class="fas fa-shopping-cart"></i>Cart</a>
+    <a href="order.html" class="footer-btn"><i class="fas fa-box"></i>Orders</a>
+    <a href="profile.html" class="footer-btn"><i class="fas fa-user"></i>Profile</a>
+  </footer>
+
+  <script>
+    document.querySelector('.logout-btn').addEventListener('click', () => {
+      const confirmLogout = confirm("Are you sure you want to logout?");
+      if (confirmLogout) {
+        sessionStorage.clear();
+        window.location.href = "login.html";
+      }
+    });
+  </script>
+
+</body>
+</html>

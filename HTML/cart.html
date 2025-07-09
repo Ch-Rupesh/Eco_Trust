@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Cart - ECO TRUST</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="cart.css" rel="stylesheet" />
+</head>
+<body>
+
+  <header>
+    ECO TRUST
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </header>
+
+  <h1>My Cart</h1>
+  <div class="cart-container" id="cart-container">
+    <!-- Items will be dynamically inserted -->
+  </div>
+
+  <footer>
+    <a href="home.html" class="footer-btn"><i class="fas fa-home"></i>Home</a>
+    <a href="cart.html" class="footer-btn"><i class="fas fa-shopping-cart"></i>Cart</a>
+    <a href="order.html" class="footer-btn"><i class="fas fa-box"></i>Orders</a>
+    <a href="profile.html" class="footer-btn"><i class="fas fa-user"></i>Profile</a>
+  </footer>
+
+  <script>
+    const cartContainer = document.getElementById('cart-container');
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (cart.length === 0) {
+      cartContainer.innerHTML = `<p class="empty-msg">Your cart is empty.</p>`;
+    } else {
+      let total = 0;
+
+      cart.forEach(item => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+
+        const itemHTML = `
+          <div class="cart-item">
+            <img src="${item.image}" alt="${item.name}">
+            <div class="cart-details">
+              <h2>${item.name}</h2>
+              <p>Price: ₹${item.price}</p>
+              <p>Quantity: ${item.quantity}</p>
+              <p>Subtotal: ₹${subtotal}</p>
+            </div>
+          </div>
+        `;
+        cartContainer.insertAdjacentHTML('beforeend', itemHTML);
+      });
+
+      cartContainer.insertAdjacentHTML('beforeend', `<div class="total">Total: ₹${total}</div>`);
+      cartContainer.insertAdjacentHTML('beforeend', `<button class="clear-cart" onclick="clearCart()">Clear Cart</button>`);
+    }
+
+    function clearCart() {
+      localStorage.removeItem('cart');
+      location.reload();
+    }
+
+    function logout() {
+      const confirmLogout = confirm("Are you sure you want to logout?");
+      if (confirmLogout) {
+        sessionStorage.clear();
+        window.location.href = "login.html";
+      }
+    }
+  </script>
+
+</body>
+</html>
