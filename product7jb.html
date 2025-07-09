@@ -185,33 +185,36 @@
   <div class="container">
     <div class="product-section">
       <div class="product-image">
-        <img src="lunchbox.jpg" alt="Steel Lunchbox">
+        <img src="jute bag.jpg" alt="Steel Lunchbox">
       </div>
       <div class="product-details">
-        <h2>Steel Lunchbox (Eco-Friendly)</h2>
-        <div class="price">₹499 <span style="text-decoration: line-through; font-size: 16px; color: gray;">₹799</span></div>
-        <div class="offer">40% OFF + Free delivery</div>
+        <h2>Jute Bag (Eco-Friendly)</h2>
+        <div class="price">₹199 <span style="text-decoration: line-through; font-size: 16px; color: gray;">₹399</span></div>
+        <div class="offer">50% OFF + Free delivery</div>
+        
         <label for="quantity" style="display: block; margin-top: 10px; font-weight: bold;">Quantity:</label>
 <input type="number" id="quantity" min="1" value="1" style="width: 80px; padding: 5px; border-radius: 4px; border: 1px solid #ccc; margin-bottom: 10px;">
 
+        
+        
         <div class="actions">
           <button class="add-cart" onclick="addToCart()">Add to Cart</button>
           <button class="buy-now" onclick="buyNow()">Buy Now</button>
         </div>
         <div class="description">
-          <p>This stainless steel lunchbox is BPA-free, eco-friendly, and perfect for everyday use. Keeps your food fresh and reduces plastic waste.</p>
-          <ul>
-            <li>Capacity: 800ml</li>
-            <li>Leak-proof lid</li>
-            <li>100% recyclable</li>
-            <li>Lightweight and durable</li>
-          </ul>
+          <p>Say goodbye to plastic bags with this stylish and sturdy jute tote. Perfect for groceries, travel, or daily use.</p>
+          <ul> 
+            <li>100% biodegradable</li> 
+            <li>Strong woven handles</li> 
+            <li>Reusable & washable</li> 
+            <li>Natural earthy look</li>
+           </ul>
         </div>
       </div>
     </div>
 
-    
-    <h3>Advantages vs Disadvantages</h3>
+
+    <h3>Jute Bags – Advantages vs Disadvantages</h3>
 <table style="width: 100%; border-collapse: separate; border-spacing: 0; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 10px; overflow: hidden;">
   <thead style="background-color: #00bfa5; color: white;">
     <tr>
@@ -221,39 +224,39 @@
   </thead>
   <tbody>
     <tr>
-      <td style="padding: 10px; border-right: 1px solid #ccc; background-color: #f9f9f9;">Durable and long-lasting</td>
-      <td style="padding: 10px; background-color: #f9f9f9;">Can warp or break easily</td>
+      <td style="padding: 10px; border-right: 1px solid #ccc; background-color: #f9f9f9;">100% biodegradable</td>
+      <td style="padding: 10px; background-color: #f9f9f9;">Major source of litter and pollution</td>
     </tr>
     <tr>
-      <td style="padding: 10px; border-right: 1px solid #ccc; background-color: #ffffff;">BPA-free and non-toxic</td>
-      <td style="padding: 10px; background-color: #ffffff;">May leach harmful chemicals</td>
+      <td style="padding: 10px; border-right: 1px solid #ccc; background-color: #ffffff;">Stronger than plastic bags</td>
+      <td style="padding: 10px; background-color: #ffffff;">Harmful to marine life</td>
     </tr>
     <tr>
-      <td style="padding: 10px; border-right: 1px solid #ccc; background-color: #f9f9f9;">Eco-friendly and recyclable</td>
-      <td style="padding: 10px; background-color: #f9f9f9;">Non-biodegradable and polluting</td>
+      <td style="padding: 10px; border-right: 1px solid #ccc; background-color: #f9f9f9;">Reusable and washable</td>
+      <td style="padding: 10px; background-color: #f9f9f9;">Breaks easily and cannot hold weight</td>
     </tr>
     <tr>
-      <td style="padding: 10px; border-right: 1px solid #ccc; border-bottom-left-radius: 10px; background-color: #ffffff;">Retains freshness of food</td>
-      <td style="padding: 10px; border-bottom-right-radius: 10px; background-color: #ffffff;">May retain stains and odors</td>
+      <td style="padding: 10px; border-right: 1px solid #ccc; border-bottom-left-radius: 10px; background-color: #ffffff;">Made from natural fibers</td>
+      <td style="padding: 10px; border-bottom-right-radius: 10px; background-color: #ffffff;">Non-biodegradable</td>
     </tr>
   </tbody>
 </table>
 
 
 
-
     <div class="review-section">
       <h3>Customer Reviews</h3>
-      <div class="review">
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-        <strong>Ravi Kumar</strong><br>
-        Great quality and no leakage. Very useful for work!
-      </div>
-      <div class="review">
-        <div class="stars">⭐⭐⭐⭐</div>
-        <strong>Sneha Verma</strong><br>
-        Stylish, sturdy, and eco-safe. Loved it!
-      </div>
+<div class="review">
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <strong>Meera Kulkarni</strong><br>
+  Very strong and stylish. Holds all my groceries easily.
+</div>
+<div class="review">
+  <div class="stars">⭐⭐⭐⭐</div>
+  <strong>Rahul Bansal</strong><br>
+  Good value for money. Just wish it was waterproof.
+</div>
+
 
       <div class="review-form">
         <h3>Write a Review</h3>
@@ -290,43 +293,6 @@
       }
     }
 
-
-function addToCart() {
-  const qty = parseInt(document.getElementById('quantity').value);
-  if (qty < 1) {
-    alert('Please select a valid quantity.');
-    return;
-  }
-
-  // Create product object
-  const product = {
-    id: "lunchbox001",  // unique product ID
-    name: "Steel Lunchbox (Eco-Friendly)",
-    price: 499,
-    quantity: qty,
-    image: "lunchbox.jpg"
-  };
-
-  // Retrieve existing cart from localStorage
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-  // Check if the product is already in the cart
-  const index = cart.findIndex(item => item.id === product.id);
-  if (index !== -1) {
-    // If already in cart, update the quantity
-    cart[index].quantity += qty;
-  } else {
-    // If not in cart, add new product
-    cart.push(product);
-  }
-
-  // Save updated cart back to localStorage
-  localStorage.setItem('cart', JSON.stringify(cart));
-
-  alert(`${qty} item(s) added to cart!`);
-}
-</script>
-
     // function addToCart() {
     //   alert("Product added to cart!");
     // }
@@ -334,22 +300,15 @@ function addToCart() {
     // function buyNow() {
     //   alert("Proceeding to payment!");
     // }
-//     function addToCart() {
-//   const qty = document.getElementById('quantity').value;
-//   alert(`${qty} item(s) added to cart!`);
-// }
+    function addToCart() {
+  const qty = document.getElementById('quantity').value;
+  alert(`${qty} item(s) added to cart!`);
+}
 
 function buyNow() {
   const qty = document.getElementById('quantity').value;
   alert(`Proceeding to payment for ${qty} item(s)!`);
 }
-
-    
-
-
-
-
-
 
 
     let selectedRating = 0;
